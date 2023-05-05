@@ -1,8 +1,8 @@
 #!/bin/bash
 #SBATCH --account=rrg-pbellec
 #SBATCH --job-name=fmriprep_study-cneuromod.triplets_sub-01_ses-002.job
-#SBATCH --output=/lustre04/scratch/bpinsard/triplets.fmriprep/code/fmriprep_study-cneuromod.triplets_sub-01_ses-002.out
-#SBATCH --error=/lustre04/scratch/bpinsard/triplets.fmriprep/code/fmriprep_study-cneuromod.triplets_sub-01_ses-002.err
+#SBATCH --output=/lustre04/scratch/bpinsard/cneuromod.triplets.fmriprep/code/fmriprep_study-cneuromod.triplets_sub-01_ses-002.out
+#SBATCH --error=/lustre04/scratch/bpinsard/cneuromod.triplets.fmriprep/code/fmriprep_study-cneuromod.triplets_sub-01_ses-002.err
 #SBATCH --time=12:00:00
 #SBATCH --cpus-per-task=12
 #SBATCH --mem-per-cpu=4096M
