@@ -14,20 +14,14 @@ Anatomical preprocessing was reused from previously existing derivative objects.
 
 Functional data preprocessing
 
-: For each of the 6 BOLD runs found per subject (across all
+: For each of the 3 BOLD runs found per subject (across all
 tasks and sessions), the following preprocessing was performed.
 First, a reference volume and its skull-stripped version were generated
 by aligning and averaging
 1 single-band references (SBRefs).
-A deformation field to correct for susceptibility distortions was estimated
-based on *fMRIPrep*'s *fieldmap-less* approach.
-The deformation field is that resulting from co-registering the BOLD reference
-to the same-subject T1w-reference with its intensity inverted [@fieldmapless1;
-@fieldmapless2].
-Registration is performed with `antsRegistration` (ANTs 2.3.3), and
-the process regularized by constraining deformation to be nonzero only
-along the phase-encoding direction, and modulated with an average fieldmap
-template [@fieldmapless3].
+A B0-nonuniformity map (or *fieldmap*) was estimated based on two (or more)
+echo-planar imaging (EPI) references with opposing phase-encoding
+directions, with `3dQwarp` @afni (AFNI 20160207).
 Based on the estimated susceptibility distortion, a corrected
 EPI (echo-planar imaging) reference was calculated for a more
 accurate co-registration with the anatomical reference.
